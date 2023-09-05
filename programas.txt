@@ -1,0 +1,9 @@
+Mozilla.Firefox.ESR
+Google.Chrome
+mcmilk.7zip-zstd
+Adobe.Acrobat.Reader.64-bit
+uvncbvba.UltraVnc
+AnyDeskSoftwareGmbH.AnyDesk
+Oracle.JavaRuntimeEnvironment
+Microsoft.Teams
+Microsoft.OneDrive
