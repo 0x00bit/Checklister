@@ -4,7 +4,8 @@ echo "Bem vindo ao Script de automatizacao de instaladores!"
 echo "abaixo, voce definira sua configuracoes"
 echo "> Se sua instalacao for local, digite 1"
 echo "> Se sua instalacao for via rede, digite 2"
-echo 
+echo  > configurations.txt
+
 set /p instalacao=Digite sua opcao:
 set origem=%CD%
 set destino=C:\checklist\
@@ -30,6 +31,10 @@ if %instalacao% equ 1 (
     )
 	
     echo Arquivos e pastas copiados para %destino%
+	REM area de logs:
+	echo modo_instalacao:%instalacao% > configuracoes.txt
+	echo local_instalacao:%destino% >> configuracoes.txt
+	
 ) else (
     if %instalacao% equ 2 (
         echo Instalacao definida 2
