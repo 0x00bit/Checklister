@@ -14,20 +14,22 @@ if %instalacao% equ 1 (
 	
     echo Instalacao definida 1
 	set instalacao=1
-	echo Copiando arquivos para C:\
+	echo Copiando arquivos para %destino%
 	cd C:\checklist\
 	
-	if not errorlevel 1 (
-		echo "Diretorio C:\checklist encontrado."
-			cd C:\checklist\
-			copy "%origem%\*.*" "%destino%" /Y /S
-	) else (
-			mkdir C:\checklist\
-			echo "Diretorio C:\checklist criado."
-			copy "%origem%\*.*" "%destino%" 
+	if not exist %destino% (
+        mkdir %destino%
+        echo "Diretorio %destino% criado."
+    ) else (
+        echo "Diretorio %destino% encontrado."
+    )
+
+    if exist %destino% (
+        cd %destino%
+        copy "%origem%\*.*" /Y
     )
 	
-	REM instalacao via rede
+    echo Arquivos e pastas copiados para %destino%
 ) else (
     if %instalacao% equ 2 (
         echo Instalacao definida 2
@@ -49,5 +51,6 @@ if %instalacao% equ 1 (
     )
 )
 
+REM chamar aqui o V7
 
 pause
